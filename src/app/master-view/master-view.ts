@@ -1,8 +1,8 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { defineComponents, IgcButtonComponent, IgcCardComponent, IgcIconButtonComponent, IgcIconComponent, IgcRippleComponent } from 'igniteui-webcomponents';
+import { defineComponents, IgcButtonComponent, IgcCalendarComponent, IgcCardComponent, IgcIconButtonComponent, IgcIconComponent, IgcRippleComponent } from 'igniteui-webcomponents';
 
-defineComponents(IgcCardComponent, IgcButtonComponent, IgcRippleComponent, IgcIconButtonComponent, IgcIconComponent);
+defineComponents(IgcCardComponent, IgcButtonComponent, IgcRippleComponent, IgcIconButtonComponent, IgcIconComponent, IgcCalendarComponent);
 
 @customElement('app-master-view')
 export default class MasterView extends LitElement {
@@ -17,6 +17,12 @@ export default class MasterView extends LitElement {
     .text {
       height: max-content;
       min-width: min-content;
+    }
+    .calendar {
+      width: max-content;
+      height: max-content;
+      flex-grow: 1;
+      flex-basis: 0;
     }
     .body-content {
       min-width: 50px;
@@ -81,6 +87,7 @@ export default class MasterView extends LitElement {
           </igc-icon-button>
         </igc-card-actions>
       </igc-card>
+      <igc-calendar ?hide-header="${false}" header-orientation="horizontal" class="calendar"></igc-calendar>
     `;
   }
 }
